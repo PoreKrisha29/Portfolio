@@ -199,15 +199,10 @@ export const ProjectsSection: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* React Bits Stacking Deck */}
+        {/* Project Stacking Deck */}
         <ScrollStack
-          itemDistance={60}
-          itemScale={0.035}
+          topOffset={95}
           itemStackDistance={24}
-          stackPosition="12%"
-          scaleEndPosition="4%"
-          baseScale={0.92}
-          useWindowScroll={true}
         >
           {projects.map((project) => (
             <ScrollStackItem key={project.title}>
