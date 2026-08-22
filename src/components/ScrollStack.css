@@ -6,10 +6,17 @@
 
 .scroll-stack-card {
   position: sticky;
+  top: var(--sticky-top, 70px);
   width: 100%;
   box-sizing: border-box;
   transform-origin: top center;
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+}
+
+@media (min-width: 768px) {
+  .scroll-stack-card {
+    top: var(--sticky-top, 95px);
+  }
 }

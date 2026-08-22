@@ -206,49 +206,49 @@ export const ProjectsSection: React.FC = () => {
         >
           {projects.map((project) => (
             <ScrollStackItem key={project.title}>
-              <div className="relative w-full rounded-2xl border border-[#8C6D4F]/50 bg-[#0E0C0A] p-8 sm:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.98)] group overflow-hidden transition-colors duration-500 hover:border-[#D4AF37]">
+              <div className="relative w-full rounded-2xl border border-[#8C6D4F]/50 bg-[#0E0C0A] p-5 sm:p-8 lg:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.98)] group overflow-hidden transition-colors duration-500 hover:border-[#D4AF37]">
 
                 {/* Top Gold Border Light Flare */}
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/80 to-transparent" />
 
                 {/* Corner Minimal L-Brackets */}
-                <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
-                <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
-                <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
-                <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
+                <div className="absolute top-0 left-0 w-3.5 h-3.5 sm:w-4 sm:h-4 border-t-2 border-l-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
+                <div className="absolute top-0 right-0 w-3.5 h-3.5 sm:w-4 sm:h-4 border-t-2 border-r-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
+                <div className="absolute bottom-0 left-0 w-3.5 h-3.5 sm:w-4 sm:h-4 border-b-2 border-l-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
+                <div className="absolute bottom-0 right-0 w-3.5 h-3.5 sm:w-4 sm:h-4 border-b-2 border-r-2 border-[#D4AF37]/60 group-hover:border-[#D4AF37] transition-colors" />
 
                 {/* Big Background Watermark Number */}
                 <span
-                  className="absolute -bottom-6 -right-3 text-8xl sm:text-9xl font-bold text-[#EAD8C7]/5 select-none pointer-events-none leading-none"
+                  className="absolute -bottom-4 -right-2 sm:-bottom-6 sm:-right-3 text-7xl sm:text-9xl font-bold text-[#EAD8C7]/5 select-none pointer-events-none leading-none"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   {project.number}
                 </span>
 
                 {/* Content Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-start relative z-10">
 
-                  {/* Left Column (7 Cols) */}
+                  {/* Left Column (7 Cols on desktop) */}
                   <div className="lg:col-span-7 flex flex-col justify-between">
                     <div>
-                      <div className="flex items-center space-x-3 mb-4">
-                        <span className="text-xs font-mono font-bold text-[#D4AF37]">
+                      <div className="flex items-center space-x-2.5 sm:space-x-3 mb-2 sm:mb-4">
+                        <span className="text-[11px] sm:text-xs font-mono font-bold text-[#D4AF37]">
                           {project.number} //
                         </span>
-                        <span className="text-[10.5px] font-mono tracking-[0.25em] uppercase text-[#A8988B]">
+                        <span className="text-[9.5px] sm:text-[10.5px] font-mono tracking-[0.22em] uppercase text-[#A8988B]">
                           {project.category}
                         </span>
                       </div>
 
                       <h3
-                        className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-white mb-4 group-hover:text-[#F7E7C4] transition-colors uppercase leading-[0.9]"
+                        className="text-2xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-white mb-2 sm:mb-4 group-hover:text-[#F7E7C4] transition-colors uppercase leading-[0.95]"
                         style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                       >
                         {project.title}
                       </h3>
 
                       <p
-                        className="text-xs sm:text-sm md:text-[14px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide mb-8 max-w-2xl"
+                        className="text-xs sm:text-sm md:text-[14px] font-light text-[#BDB0A4] leading-[1.65] sm:leading-[1.85] tracking-wide mb-4 sm:mb-6 max-w-2xl"
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
                       >
                         {project.description}
@@ -256,41 +256,70 @@ export const ProjectsSection: React.FC = () => {
                     </div>
 
                     {/* Tech Stack Pills */}
-                    <div className="flex flex-wrap gap-2 pt-6 border-t border-[#8C6D4F]/25">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-3 sm:pt-5 border-t border-[#8C6D4F]/25">
                       {project.tech.map((t) => (
                         <span
                           key={t}
-                          className="px-3 py-1 text-[10px] font-medium tracking-[0.16em] uppercase rounded-sm border border-[#8C6D4F]/40 bg-[#16120E] text-[#E8D7C5] group-hover:border-[#D4AF37]/50 transition-all duration-300"
+                          className="px-2.5 py-0.5 sm:px-3 sm:py-1 text-[9px] sm:text-[10px] font-medium tracking-[0.14em] uppercase rounded-sm border border-[#8C6D4F]/40 bg-[#16120E] text-[#E8D7C5] group-hover:border-[#D4AF37]/50 transition-all duration-300"
                           style={{ fontFamily: "'Montserrat', sans-serif" }}
                         >
                           {t}
                         </span>
                       ))}
                     </div>
+
+                    {/* Action Buttons on Mobile (< lg) */}
+                    <div className="flex lg:hidden flex-row gap-2.5 pt-4 mt-2">
+                      {project.liveUrl ? (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 inline-flex items-center justify-center space-x-1.5 px-4 py-2.5 border border-[#D4AF37] bg-[#D4AF37] hover:bg-[#E8DFD8] text-black text-[10px] font-bold tracking-[0.2em] uppercase transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.25)] rounded-sm"
+                          style={{ fontFamily: "'Montserrat', sans-serif" }}
+                        >
+                          <span>LIVE DEMO</span>
+                          <span className="text-xs font-bold">↗</span>
+                        </a>
+                      ) : null}
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${project.liveUrl ? 'flex-1' : 'w-full'} inline-flex items-center justify-center space-x-1.5 px-4 py-2.5 border border-[#8C6D4F] bg-[#16120E] hover:border-[#D4AF37] text-[#EAD8C7] hover:text-white text-[10px] font-semibold tracking-[0.2em] uppercase transition-all duration-300 rounded-sm`}
+                        style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      >
+                        <span>VIEW REPO</span>
+                        <span className="text-xs">↗</span>
+                      </a>
+                    </div>
                   </div>
 
-                  {/* Right Column (5 Cols) */}
-                  <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6 lg:pl-6 lg:border-l lg:border-[#8C6D4F]/25">
-                    <div className="space-y-3">
-                      <span className="text-[9.5px] font-mono tracking-[0.25em] uppercase text-[#8C6D4F] block mb-2">
+                  {/* Right Column (5 Cols on desktop) */}
+                  <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-4 sm:space-y-6 lg:pl-6 lg:border-l lg:border-[#8C6D4F]/25">
+                    <div className="space-y-2 sm:space-y-3">
+                      <span className="text-[9px] sm:text-[9.5px] font-mono tracking-[0.25em] uppercase text-[#8C6D4F] block mb-1.5 sm:mb-2">
                         // ARCHITECTURE METRICS
                       </span>
-                      {project.metrics.map((m) => (
-                        <div
-                          key={m.label}
-                          className="p-3.5 rounded-sm border border-[#8C6D4F]/25 bg-[#050403] flex items-center justify-between"
-                        >
-                          <span className="text-[10px] font-mono text-[#A8988B]">
-                            {m.label}
-                          </span>
-                          <span className="text-[11px] font-mono font-medium text-[#F7E7C4]">
-                            {m.value}
-                          </span>
-                        </div>
-                      ))}
+                      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-2">
+                        {project.metrics.map((m) => (
+                          <div
+                            key={m.label}
+                            className="p-2.5 sm:p-3 rounded-sm border border-[#8C6D4F]/25 bg-[#050403] flex items-center justify-between"
+                          >
+                            <span className="text-[9px] sm:text-[10px] font-mono text-[#A8988B]">
+                              {m.label}
+                            </span>
+                            <span className="text-[10px] sm:text-[11px] font-mono font-medium text-[#F7E7C4]">
+                              {m.value}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                    {/* Action Buttons on Desktop (>= lg) */}
+                    <div className="hidden lg:flex flex-col sm:flex-row gap-3 pt-2">
                       {project.liveUrl ? (
                         <a
                           href={project.liveUrl}

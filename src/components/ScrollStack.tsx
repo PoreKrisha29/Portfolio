@@ -20,20 +20,31 @@ export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({
   topOffset = 95,
   itemStackDistance = 24,
 }) => {
-  const stickyTop = topOffset + index * itemStackDistance;
+  const desktopTop = topOffset + index * itemStackDistance;
+  const mobileTop = 65 + index * 12;
   const isLast = index === totalItems - 1;
   const combinedClassName = `${itemClassName} ${className}`.trim();
 
   return (
     <div
       className={`scroll-stack-card sticky transition-all duration-300 ${
-        isLast ? 'mb-12' : 'mb-32 sm:mb-44 lg:mb-56'
+        isLast ? 'mb-10' : 'mb-20 sm:mb-32 lg:mb-44'
       } ${combinedClassName}`}
-      style={{
-        top: `${stickyTop}px`,
-        zIndex: (index + 1) * 10,
-      }}
+      style={
+        {
+          '--sticky-top': `${mobileTop}px`,
+          top: `var(--sticky-top)`,
+          zIndex: (index + 1) * 10,
+        } as React.CSSProperties
+      }
     >
+      <style>{`
+        @media (min-width: 768px) {
+          .scroll-stack-card:nth-child(${index + 1}) {
+            --sticky-top: ${desktopTop}px !important;
+          }
+        }
+      `}</style>
       {children}
     </div>
   );
@@ -62,7 +73,7 @@ export const ScrollStack: React.FC<ScrollStackProps> = ({
   const totalItems = items.length;
 
   return (
-    <div className={`scroll-stack-wrapper relative w-full pb-24 ${className}`.trim()}>
+    <div className={`scroll-stack-wrapper relative w-full pb-20 ${className}`.trim()}>
       {items.map((child, index) => {
         if (React.isValidElement(child)) {
           return React.cloneElement(child as React.ReactElement<any>, {
