@@ -74,7 +74,7 @@ const projects: Project[] = [
     description:
       'Full-stack freelancing marketplace developed with Python and Flask enabling clients to post projects and freelancers to discover opportunities and submit proposals through a role-based workflow. Designed and integrated structured RESTful APIs with relational database schemas and real-time messaging.',
     githubUrl: 'https://github.com/PoreKrisha29/Skill-Bridge-v3.0',
-    liveUrl: '',
+    liveUrl: 'https://skillbridgefinal.onrender.com/',
     tech: [
       'Python 3',
       'Flask',
@@ -153,7 +153,7 @@ export const ProjectsSection: React.FC = () => {
       <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-[#8C6D4F]/5 rounded-full blur-[170px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
-        
+
         {/* Eyebrow Header */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -212,7 +212,7 @@ export const ProjectsSection: React.FC = () => {
           {projects.map((project) => (
             <ScrollStackItem key={project.title}>
               <div className="relative w-full rounded-2xl border border-[#8C6D4F]/50 bg-[#0E0C0A] p-8 sm:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.98)] group overflow-hidden transition-colors duration-500 hover:border-[#D4AF37]">
-                
+
                 {/* Top Gold Border Light Flare */}
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/80 to-transparent" />
 
@@ -232,7 +232,7 @@ export const ProjectsSection: React.FC = () => {
 
                 {/* Content Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
-                  
+
                   {/* Left Column (7 Cols) */}
                   <div className="lg:col-span-7 flex flex-col justify-between">
                     <div>
