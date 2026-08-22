@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #0A0806;
+  --bg-tertiary: #120F0C;
+  --text-primary: #FFFFFF;
+  --text-secondary: #E8DFD8;
+  --text-muted: #A8988B;
+  --border-gold: #D4AF37;
+  --accent-gold: #D4AF37;
+}
+
+html {
+  scroll-behavior: smooth;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #000000;
+  color: #E8DFD8;
+}
+
+/* =========================================================================
+   HERO SECTION: ALWAYS GLOWING WHITE & GOLD METALLIC IN BOTH THEMES
+   ========================================================================= */
+
+#hero,
+html.light #hero {
+  background-color: #111825 !important;
+  color: #E8DFD8 !important;
+}
+
+#hero h1 span,
+html.light #hero h1 span {
+  -webkit-text-fill-color: transparent !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+#hero h1 span:nth-child(1),
+html.light #hero h1 span:nth-child(1) {
+  background-image: linear-gradient(180deg, #FFFFFF 0%, #D5CBC0 50%, #605448 100%) !important;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.85)) !important;
+}
+
+#hero h1 span:nth-child(2),
+html.light #hero h1 span:nth-child(2) {
+  background-image: linear-gradient(180deg, #F7E7C4 0%, #C99E5D 50%, #543B1A 100%) !important;
+  filter: drop-shadow(0 8px 25px rgba(201, 158, 93, 0.35)) !important;
+}
+
+#hero h1 span:nth-child(3),
+html.light #hero h1 span:nth-child(3) {
+  background-image: linear-gradient(180deg, #DFBE8A 0%, #9B7640 50%, #342410 100%) !important;
+  filter: drop-shadow(0 10px 30px rgba(155, 118, 64, 0.4)) !important;
+}
+
+#hero p,
+html.light #hero p {
+  color: rgba(232, 223, 216, 0.85) !important;
+}
+
+/* =========================================================================
+   LIGHT MODE OVERRIDES (ONLY ACTIVE ON CONTENT SECTIONS WHEN html.light)
+   ========================================================================= */
+
+html.light,
+html.light body {
+  background-color: #F8F5F0 !important;
+  color: #2B2119 !important;
+}
+
+html.light section:not(#hero),
+html.light footer {
+  background-color: #F8F5F0 !important;
+  color: #2B2119 !important;
+}
+
+/* Turn off transparent text gradients in Light Mode so content titles are bold & solid */
+html.light section:not(#hero) h1 span,
+html.light section:not(#hero) h2 span,
+html.light section:not(#hero) h3 span,
+html.light footer h2 span,
+html.light footer h3 span {
+  -webkit-text-fill-color: initial !important;
+  color: #14100C !important;
+  background: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+html.light section:not(#hero) h1 span:last-child,
+html.light section:not(#hero) h2 span:last-child,
+html.light section:not(#hero) h3 span:last-child {
+  color: #9E7422 !important;
+}
+
+/* About Metrics in Light Mode */
+html.light .stat-value-white {
+  color: #14100C !important;
+}
+
+html.light .stat-value-gold {
+  color: #9E7422 !important;
+}
+
+html.light .stat-label {
+  color: #6B4E2B !important;
+}
+
+html.light #about .text-\[\#F4EBE2\],
+html.light #about .text-\[\#FFF5EB\],
+html.light #about .text-\[\#FFFFFF\] {
+  color: #14100C !important;
+}
+
+html.light #about .text-\[\#D4AF37\] {
+  color: #9E7422 !important;
+}
+
+html.light #about .text-\[\#A8988B\],
+html.light #about .text-\[\#B3A497\] {
+  color: #5C4A3C !important;
+}
+
+html.light #about .text-\[\#F3DBB3\] {
+  color: #9E7422 !important;
+  font-weight: 600 !important;
+}
+
+/* Navbar in Light Mode */
+html.light header > div {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(140, 109, 79, 0.35) !important;
+  box-shadow: 0 10px 30px rgba(100, 70, 35, 0.1) !important;
+}
+
+html.light header button span,
+html.light header a span {
+  -webkit-text-fill-color: initial !important;
+  color: #14100C !important;
+}
+
+html.light header nav {
+  background-color: #F3ECE1 !important;
+  border-color: rgba(140, 109, 79, 0.25) !important;
+}
+
+html.light header nav a {
+  color: #4A3B2F !important;
+}
+
+html.light header nav a:hover {
+  color: #14100C !important;
+  background-color: rgba(158, 116, 34, 0.12) !important;
+}
+
+/* Cards & Bento Boxes in Light Mode */
+html.light .scroll-stack-card > div,
+html.light #skills .grid > div,
+html.light #about .perspective-\[1400px\] > div,
+html.light #contact .lg\:col-span-7 {
+  background-color: #FFFFFF !important;
+  border-color: rgba(140, 109, 79, 0.35) !important;
+  box-shadow: 0 15px 40px rgba(110, 80, 45, 0.08) !important;
+}
+
+html.light section:not(#hero) h3 {
+  color: #14100C !important;
+}
+
+html.light section:not(#hero) p {
+  color: #382D24 !important;
+}
+
+/* Bento Stat Capsule in Light Mode */
+html.light .bento-stat {
+  background-color: #F3ECE1 !important;
+  color: #6B4E2B !important;
+  border-color: rgba(140, 109, 79, 0.35) !important;
+}
+
+/* Contact Info Channels in Light Mode */
+html.light #contact a span.font-mono {
+  color: #14100C !important;
+}
+
+html.light #contact a:hover span.font-mono {
+  color: #9E7422 !important;
+}
+
+html.light #contact p {
+  color: #4A3B2F !important;
+}
+
+/* Tag Pills in Light Mode */
+html.light span.rounded-sm {
+  background-color: #F6F1E8 !important;
+  color: #14100C !important;
+  border-color: rgba(140, 109, 79, 0.35) !important;
+}
+
+/* Inputs in Light Mode */
+html.light input,
+html.light textarea {
+  background-color: #F8F4EC !important;
+  color: #14100C !important;
+  border-color: rgba(140, 109, 79, 0.4) !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #7A6553 !important;
+}
+
+html.light button[type="submit"] {
+  background-color: #14100C !important;
+  color: #FFF5EB !important;
+  border-color: #9E7422 !important;
+}
+
+html.light #contact a[href*="github"],
+html.light #contact a[href*="linkedin"],
+html.light #contact a[href*="resume"] {
+  background-color: #FFFFFF !important;
+  color: #14100C !important;
+  border-color: rgba(140, 109, 79, 0.4) !important;
+}
+
+html.light #contact a[href*="github"]:hover,
+html.light #contact a[href*="linkedin"]:hover,
+html.light #contact a[href*="resume"]:hover {
+  background-color: #14100C !important;
+  color: #FFF5EB !important;
+  border-color: #14100C !important;
+}
