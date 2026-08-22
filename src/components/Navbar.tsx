@@ -77,7 +77,7 @@ export const Navbar: React.FC = () => {
 
           {/* Center: Desktop Navigation Capsules */}
           <nav
-            className="hidden md:flex items-center space-x-1 sm:space-x-1.5 p-1 rounded-full bg-white/[0.03] border border-[#8C6D4F]/30"
+            className="hidden md:flex items-center space-x-1 sm:space-x-1.5 p-1 rounded-full bg-white/[0.04] border border-[#8C6D4F]/35"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             {navItems.map((item) => {
@@ -91,8 +91,8 @@ export const Navbar: React.FC = () => {
                   href={item.href}
                   className={`px-3.5 lg:px-4 py-1.5 rounded-full text-[10px] lg:text-[11px] tracking-[0.22em] font-medium uppercase transition-all duration-300 ${
                     isActive
-                      ? 'bg-[#9E7422] dark:bg-[#D4AF37]/20 text-white dark:text-[#FFF5EB] border border-[#9E7422] dark:border-[#D4AF37]/60 shadow-[0_0_15px_rgba(212,175,55,0.3)] font-semibold'
-                      : 'text-[#4A3B2F] dark:text-[#BFA895] hover:text-[#120E0B] dark:hover:text-[#FFF5EB] hover:bg-black/5 dark:hover:bg-white/[0.06] border border-transparent hover:border-[#8C6D4F]/30'
+                      ? 'bg-[#D4AF37]/25 text-[#FFF5EB] border border-[#D4AF37]/70 shadow-[0_0_15px_rgba(212,175,55,0.35)] font-semibold'
+                      : 'text-[#E8DFD8] hover:text-white hover:bg-white/[0.08] border border-transparent hover:border-[#8C6D4F]/40'
                   }`}
                 >
                   {item.name}
@@ -109,7 +109,7 @@ export const Navbar: React.FC = () => {
               whileTap={{ scale: 0.9 }}
               whileHover={{ scale: 1.06 }}
               onClick={toggleTheme}
-              className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#8C6D4F]/40 hover:border-[#D4AF37] bg-black/5 dark:bg-white/[0.03] flex items-center justify-center text-[#D4AF37] hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-300 cursor-pointer focus:outline-none"
+              className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#8C6D4F]/40 hover:border-[#D4AF37] bg-white/[0.04] flex items-center justify-center text-[#D4AF37] hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-300 cursor-pointer focus:outline-none"
               title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
               aria-label="Toggle Dark/Light Mode"
             >
@@ -152,17 +152,17 @@ export const Navbar: React.FC = () => {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-1.5 rounded-full border border-[#8C6D4F]/40 hover:border-[#D4AF37] bg-black/5 dark:bg-white/[0.02] hover:bg-[#D4AF37]/10 text-[10px] tracking-[0.2em] font-medium uppercase text-[var(--text-secondary)] hover:text-[#D4AF37] transition-all duration-300 shadow-sm"
+              className="inline-flex items-center px-4 py-1.5 rounded-full border border-[#8C6D4F]/50 hover:border-[#D4AF37] bg-white/[0.04] hover:bg-[#D4AF37]/15 text-[10px] tracking-[0.2em] font-semibold uppercase text-[#E8DFD8] hover:text-[#D4AF37] transition-all duration-300 shadow-sm"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               <span>RESUME</span>
-              <span className="ml-1 text-[9px] opacity-70">↗</span>
+              <span className="ml-1 text-[9px] text-[#D4AF37]">↗</span>
             </a>
 
             {/* Mobile Menu Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden w-8 h-8 rounded-full border border-[#8C6D4F]/40 bg-black/5 dark:bg-[#120F0C] flex items-center justify-center text-[var(--text-secondary)] hover:text-[#D4AF37] hover:border-[#D4AF37] transition-colors focus:outline-none"
+              className="md:hidden w-8 h-8 rounded-full border border-[#8C6D4F]/40 bg-white/[0.04] flex items-center justify-center text-[#E8DFD8] hover:text-[#D4AF37] hover:border-[#D4AF37] transition-colors focus:outline-none"
               aria-label="Toggle Navigation Menu"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -186,13 +186,13 @@ export const Navbar: React.FC = () => {
               transition={{ duration: 0.2 }}
               className="md:hidden mt-3 pt-3 border-t border-[#8C6D4F]/25 flex flex-col space-y-2"
             >
-              <nav className="flex flex-col space-y-1.5 text-xs tracking-[0.24em] font-medium uppercase text-[var(--text-muted)]">
+              <nav className="flex flex-col space-y-1.5 text-xs tracking-[0.24em] font-medium uppercase text-[#E8DFD8]">
                 {navItems.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="px-4 py-2 rounded-full hover:bg-[#D4AF37]/15 hover:text-[var(--text-primary)] hover:border hover:border-[#D4AF37]/40 transition-all"
+                    className="px-4 py-2 rounded-full text-[#E8DFD8] hover:text-white hover:bg-[#D4AF37]/15 hover:border hover:border-[#D4AF37]/40 transition-all"
                   >
                     {item.name}
                   </a>
@@ -202,7 +202,7 @@ export const Navbar: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-4 py-2 rounded-full border border-[#8C6D4F]/40 text-[#D4AF37] hover:bg-[#D4AF37]/15 transition-all"
+                  className="px-4 py-2 rounded-full border border-[#8C6D4F]/40 text-[#D4AF37] hover:bg-[#D4AF37]/15 transition-all font-semibold"
                 >
                   RESUME ↗
                 </a>

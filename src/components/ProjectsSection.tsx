@@ -201,8 +201,13 @@ export const ProjectsSection: React.FC = () => {
 
         {/* React Bits Stacking Deck */}
         <ScrollStack
-          topOffset={115}
-          itemStackDistance={20}
+          itemDistance={60}
+          itemScale={0.035}
+          itemStackDistance={24}
+          stackPosition="12%"
+          scaleEndPosition="4%"
+          baseScale={0.92}
+          useWindowScroll={true}
         >
           {projects.map((project) => (
             <ScrollStackItem key={project.title}>

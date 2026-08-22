@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --bg-primary: #000000;
   --bg-secondary: #0A0806;
@@ -152,12 +154,13 @@ html.light header nav {
 }
 
 html.light header nav a {
-  color: #4A3B2F !important;
+  color: #2B2119 !important;
+  font-weight: 600 !important;
 }
 
 html.light header nav a:hover {
   color: #14100C !important;
-  background-color: rgba(158, 116, 34, 0.12) !important;
+  background-color: rgba(158, 116, 34, 0.15) !important;
 }
 
 /* Cards & Bento Boxes in Light Mode */
