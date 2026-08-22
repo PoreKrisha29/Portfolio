@@ -177,17 +177,17 @@ export const ProjectsSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col md:flex-row md:items-end justify-between mb-16"
+          className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#8C6D4F]/30"
         >
           <h2
             className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight uppercase leading-[0.85] select-none"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
-              SELECTED WORKS.
+              ARCHITECTED PLATFORMS.
             </span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
-              ENGINEERED VALUE.
+              MEASURABLE SCALE.
             </span>
           </h2>
 
@@ -201,13 +201,8 @@ export const ProjectsSection: React.FC = () => {
 
         {/* React Bits Stacking Deck */}
         <ScrollStack
-          itemDistance={60}
-          itemScale={0.035}
-          itemStackDistance={24}
-          stackPosition="12%"
-          scaleEndPosition="4%"
-          baseScale={0.92}
-          useWindowScroll={true}
+          topOffset={115}
+          itemStackDistance={20}
         >
           {projects.map((project) => (
             <ScrollStackItem key={project.title}>
